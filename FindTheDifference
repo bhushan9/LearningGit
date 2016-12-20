@@ -1,0 +1,25 @@
+public class Solution {
+    public char findTheDifference(String s, String t) {
+        
+        boolean flag=false;
+        
+        int s_count[]=new int[26];
+        int t_count[]=new int[26];
+        char result='a';  // random character initialization
+       
+       
+        for(int i=0; i<t.length(); i++ )
+            t_count[t.charAt(i)-97]+=1;  
+        for(int i=0; i<s.length();i++)
+            s_count[s.charAt(i)-97]+=1;
+            
+        for(int i=0;i<26;i++)      
+            {
+                if(s_count[i]!=t_count[i])
+                    result=(char)(i+97);
+            }
+            
+            return result;
+      
+    }
+}
